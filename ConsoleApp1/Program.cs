@@ -2,18 +2,7 @@
 Console.WriteLine("Hello, World!");
 
 
-public sealed class Price(decimal value)
-{
-	public decimal Value { get; } = value;
 
-	public decimal GetPercentage(decimal percentage)
-	{
-		if (percentage < 0 || percentage > 1)
-			throw new ArgumentOutOfRangeException(nameof(percentage));
-
-		return Value * percentage;
-	}
-}
 
 public interface IPriceCalculationStrategy
 {
