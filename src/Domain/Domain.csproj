@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Price.cs~RF23ae2668.TMP" />
     <None Remove="Price.cs~RFf308acc.TMP" />
+    <None Remove="ValueObjects\Price.cs~RF225191e5.TMP" />
+    <None Remove="ValueObjects\Price.cs~RF2254a57e.TMP" />
+    <None Remove="ValueObjects\Price.cs~RF2257b696.TMP" />
   </ItemGroup>
 
 </Project>
