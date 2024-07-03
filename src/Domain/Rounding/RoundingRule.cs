@@ -4,12 +4,12 @@ namespace Domain.Rounding;
 
 public interface IRoundingMethod
 {
-	ComputedPrice Apply(ComputedPrice computedPrice);
+	Price Apply(Price price);
 }
 
 public sealed class RuleOfNineMethod : IRoundingMethod
 {
-	public ComputedPrice Apply(ComputedPrice computedPrice)
+	public Price Apply(Price price)
 	{
 		throw new NotImplementedException();
 	}
@@ -17,7 +17,7 @@ public sealed class RuleOfNineMethod : IRoundingMethod
 
 public sealed class RuleOfNinesMethod : IRoundingMethod
 {
-	public ComputedPrice Apply(ComputedPrice computedPrice)
+	public Price Apply(Price price)
 	{
 		throw new NotImplementedException();
 	}
@@ -25,7 +25,7 @@ public sealed class RuleOfNinesMethod : IRoundingMethod
 
 public sealed class RuleOfZerosMethod : IRoundingMethod
 {
-	public ComputedPrice Apply(ComputedPrice computedPrice)
+	public Price Apply(Price price)
 	{
 		throw new NotImplementedException();
 	}
@@ -53,6 +53,7 @@ public class RoundingRule : Enumeration
 		_roundingMethod = roundingMethod;
 	}
 
-	public ComputedPrice Apply(ComputedPrice computedPrice)
-		=> _roundingMethod.Apply(computedPrice);
+	public bool CanApply(Price price) { return false; }
+
+	public Price Apply(Price price) { throw new NotImplementedException(); }
 }
