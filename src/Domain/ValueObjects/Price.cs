@@ -2,34 +2,18 @@
 
 public sealed class Price
 {
+	public decimal Value { get; }
+
+	public Price(decimal value)
+	{
+		ArgumentOutOfRangeException.ThrowIfNegative(value);
+
+		Value = value;
+	}
+
+	public static Price operator *(Price price, Percentage percentage)
+		=> new(percentage.ApplyTo(price.Value));
+
+	public static Price operator +(Price left, Price right)
+		=> new(left.Value + right.Value);
 }
-
-public sealed class Percentage
-{
-
-}
-
-public sealed class Markup
-{
-
-}
-
-public sealed class Timeframe
-{
-
-}
-
-public enum ScheduleStatus
-{
-	Active,
-	Inactive
-}
-
-public sealed class Schedule
-{
-
-}
-
-public record ComputedPrice(Price CostPrice, Price SellingPrice, Price? ListPrice);
-
-public sealed class Range;
